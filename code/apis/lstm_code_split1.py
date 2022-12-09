@@ -111,7 +111,7 @@ def main():
   
   gt_x = df['Date'].tolist()
   gt_y = df['Price'].tolist()
-  prediction_x = gt_x[-4:]
+  prediction_x = gt_x[-3:]
   
   df = df[['Date', 'Total_Volume', 'Total_Boxes', 'Small_Boxes', 'Large_Boxes', 'XLarge_Boxes', 'Price']]
   df = df.drop(['Date'], axis=1)
@@ -121,7 +121,8 @@ def main():
 
   # 데이터를 역순으로 정렬하여 전체 데이터의 70% 학습, 30% 테스트에 사용
   # df = df[::-1]  
-  train_size = int(len(df)*0.7)
+#   train_size = int(len(df)*0.7)
+  train_size = 9
   train_set = df[0:train_size]  
   test_set = df[train_size-seq_length:]
 
@@ -178,7 +179,7 @@ def main():
   model, train_hist = train_model(net, dataloader, num_epochs = nb_epochs, lr = learning_rate, verbose = 20, patience = 10)
 
   # loss per epoch
-  save_path = os.path.join('results', 'lstm')
+  save_path = os.path.join('results', 'lstm-split1')
   os.makedirs(save_path, exist_ok=True)
     
   # fig = plt.figure(figsize=(10, 4))
@@ -191,7 +192,7 @@ def main():
   # plt.savefig(os.path.join(save_path, 'loss.png'))
 
   # model save   
-  PATH = os.path.join(save_path, "my_lstm.pth")
+  PATH = os.path.join(save_path, "my_lstm-split1.pth")
   torch.save(model.state_dict(), PATH)
 
   # model load
@@ -229,10 +230,10 @@ def main():
   visual(gt_x, gt_y, prediction_x, list(chain.from_iterable(pred_inverse)), os.path.join(save_path, 'lstm_prediction.png'))
     
   # cal RMSE
-  rmse = np.array(cal_RMSE(gt_y[8:], np.array(list(chain.from_iterable(pred_inverse)))))
+  rmse = np.array(cal_RMSE(gt_y[9:], np.array(list(chain.from_iterable(pred_inverse)))))
   print('rmse : {}\n'.format(rmse))
 
 
 if __name__ == '__main__':
-  seed_everything(1231)
+  seed_everything(33)
   main()
