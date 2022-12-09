@@ -12,7 +12,7 @@
     |Version|Link|
     |------|---|
     |Origin dataset|[link](https://github.com/easy-note/Kimchi_price_prediction/blob/main/dataset/Kimchi_dataset.xlsx)|
-    |Post processing dataset|[link](https://github.com/easy-note/Kimchi_price_prediction/blob/main/dataset/final_kimchi_dataset.csv)|
+    |Pre-processing dataset|[link](https://github.com/easy-note/Kimchi_price_prediction/blob/main/dataset/final_kimchi_dataset.csv)|
 
 - Train/Test split
 The experiment was conducted with the best configuraion split for each model. In the case of LSTM, both versions were experimented and document was prepared based on [Split 2] (because the performance was better)
