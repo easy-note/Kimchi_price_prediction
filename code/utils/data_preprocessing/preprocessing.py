@@ -40,7 +40,7 @@ def main():
     os.makedirs(save_path, exist_ok=True)
     
     # save csv file
-    with open(os.path.join(save_path, 'test2-preprocessing_kimchi_dataset.csv'),'w') as file :
+    with open(os.path.join(save_path, 'preprocessing_kimchi_dataset.csv'),'w') as file :
         write = csv.writer(file)
         write.writerow(['Date','Price','Total Volume','Total Boxes','Small Boxes','Large Boxes','XLarge Boxes'])
         write.writerows(final)
