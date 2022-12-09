@@ -5,8 +5,8 @@
 - Predicting the price of Kimchi
 
 **Dataset**
-- Representing prices of kimchi during the first thress monthes of 2018
-- The dataset is identified by their sepcifications such as Date, Price, Total Volume, Total Boxes, Small Boxes, Large Boxes, XLarge Boxes, Region
+- Representing prices of kimchi during the first three months of 2018
+- The dataset is identified by their specifications such as Date, Price, Total Volume, Total Boxes, Small Boxes, Large Boxes, XLarge Boxes, Region
 - For effective training, post processing was carried out
 - Dataset can be found at:
     |Version|Link|
